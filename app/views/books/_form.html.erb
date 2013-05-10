@@ -1,0 +1,73 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :isbn %><br />
+    <%= f.text_field :isbn %>
+  </div>
+  <div class="field">
+    <%= f.label :page %><br />
+    <%= f.number_field :page %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher %><br />
+    <%= f.text_field :publisher %>
+  </div>
+  <div class="field">
+    <%= f.label :publish_date %><br />
+    <%= f.date_select :publish_date %>
+  </div>
+  <div class="field">
+    <%= f.label :holder %><br />
+    <%= f.text_field :holder %>
+  </div>
+  <div class="field">
+    <%= f.label :holder_id %><br />
+    <%= f.number_field :holder_id %>
+  </div>
+  <div class="field">
+    <%= f.label :hold_status %><br />
+    <%= f.check_box :hold_status %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_date %><br />
+    <%= f.date_select :rent_date %>
+  </div>
+  <div class="field">
+    <%= f.label :return_date %><br />
+    <%= f.date_select :return_date %>
+  </div>
+  <div class="field">
+    <%= f.label :previous_renter %><br />
+    <%= f.text_field :previous_renter %>
+  </div>
+  <div class="field">
+    <%= f.label :previous_renter_id %><br />
+    <%= f.number_field :previous_renter_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

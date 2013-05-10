@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @book.title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @book.author %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @book.price %>
+</p>
+
+<p>
+  <b>Isbn:</b>
+  <%= @book.isbn %>
+</p>
+
+<p>
+  <b>Page:</b>
+  <%= @book.page %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @book.publisher %>
+</p>
+
+<p>
+  <b>Publish date:</b>
+  <%= @book.publish_date %>
+</p>
+
+<p>
+  <b>Holder:</b>
+  <%= @book.holder %>
+</p>
+
+<p>
+  <b>Holder:</b>
+  <%= @book.holder_id %>
+</p>
+
+<p>
+  <b>Hold status:</b>
+  <%= @book.hold_status %>
+</p>
+
+<p>
+  <b>Rent date:</b>
+  <%= @book.rent_date %>
+</p>
+
+<p>
+  <b>Return date:</b>
+  <%= @book.return_date %>
+</p>
+
+<p>
+  <b>Previous renter:</b>
+  <%= @book.previous_renter %>
+</p>
+
+<p>
+  <b>Previous renter:</b>
+  <%= @book.previous_renter_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

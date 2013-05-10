@@ -1,0 +1,89 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", book_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_book_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", book_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.book.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
+          <%= @book.title %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.author", :default => t("activerecord.labels.author", :default => "Author")) %>:</b>
+          <%= @book.author %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.price", :default => t("activerecord.labels.price", :default => "Price")) %>:</b>
+          <%= @book.price %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.isbn", :default => t("activerecord.labels.isbn", :default => "Isbn")) %>:</b>
+          <%= @book.isbn %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.page", :default => t("activerecord.labels.page", :default => "Page")) %>:</b>
+          <%= @book.page %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.publisher", :default => t("activerecord.labels.publisher", :default => "Publisher")) %>:</b>
+          <%= @book.publisher %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.publish_date", :default => t("activerecord.labels.publish_date", :default => "Publish date")) %>:</b>
+          <%= @book.publish_date %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.holder", :default => t("activerecord.labels.holder", :default => "Holder")) %>:</b>
+          <%= @book.holder %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.holder_id", :default => t("activerecord.labels.holder_id", :default => "Holder")) %>:</b>
+          <%= @book.holder_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.hold_status", :default => t("activerecord.labels.hold_status", :default => "Hold status")) %>:</b>
+          <%= @book.hold_status %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.rent_date", :default => t("activerecord.labels.rent_date", :default => "Rent date")) %>:</b>
+          <%= @book.rent_date %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.return_date", :default => t("activerecord.labels.return_date", :default => "Return date")) %>:</b>
+          <%= @book.return_date %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.previous_renter", :default => t("activerecord.labels.previous_renter", :default => "Previous renter")) %>:</b>
+          <%= @book.previous_renter %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.book.previous_renter_id", :default => t("activerecord.labels.previous_renter_id", :default => "Previous renter")) %>:</b>
+          <%= @book.previous_renter_id %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_book_path(@book), :class => "button" %> 
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), book_path(@book), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>      
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

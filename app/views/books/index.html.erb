@@ -1,0 +1,49 @@
+<h1>Listing books</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Price</th>
+    <th>Isbn</th>
+    <th>Page</th>
+    <th>Publisher</th>
+    <th>Publish date</th>
+    <th>Holder</th>
+    <th>Holder</th>
+    <th>Hold status</th>
+    <th>Rent date</th>
+    <th>Return date</th>
+    <th>Previous renter</th>
+    <th>Previous renter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.author %></td>
+    <td><%= book.price %></td>
+    <td><%= book.isbn %></td>
+    <td><%= book.page %></td>
+    <td><%= book.publisher %></td>
+    <td><%= book.publish_date %></td>
+    <td><%= book.holder %></td>
+    <td><%= book.holder_id %></td>
+    <td><%= book.hold_status %></td>
+    <td><%= book.rent_date %></td>
+    <td><%= book.return_date %></td>
+    <td><%= book.previous_renter %></td>
+    <td><%= book.previous_renter_id %></td>
+    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>

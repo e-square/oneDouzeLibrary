@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  author: MyString
+  price: 1
+  isbn: MyString
+  page: 1
+  publisher: MyString
+  publish_date: 2013-05-11
+  holder: MyString
+  holder_id: 1
+  hold_status: false
+  rent_date: 2013-05-11
+  return_date: 2013-05-11
+  previous_renter: MyString
+  previous_renter_id: 1
+
+two:
+  title: MyString
+  author: MyString
+  price: 1
+  isbn: MyString
+  page: 1
+  publisher: MyString
+  publish_date: 2013-05-11
+  holder: MyString
+  holder_id: 1
+  hold_status: false
+  rent_date: 2013-05-11
+  return_date: 2013-05-11
+  previous_renter: MyString
+  previous_renter_id: 1

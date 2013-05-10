@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One Douze Library</title>
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/drastic-dark/style", "web-app-theme/override", :cache => true %>
+  <%= javascript_include_tag :'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+		<h1><a href="/">One Douze Library</a></h1>
+			<div id="facebook_login">  
+				<% if current_omniuser %>  
+					<%= current_omniuser.name %>,
+					<%= current_omniuser.image %>,
+					<%= current_omniuser.email %>,
+					<%= link_to "Log out" ,logout_path %>  
+				<% else %>  
+					<%= link_to "Twitterでlogin","/auth/twitter" %>  
+					<%= link_to "facebookでlogin", "/auth/facebook?display=touch" %>  
+				<% end %>  
+			</div>  
+      <div id="user-navigation">
+        <ul class="wat-cf">
+          <li><a href="#"><%= t("web-app-theme.profile", :default => "Profile") %></a></li>
+          <li><a href="#"><%= t("web-app-theme.settings", :default => "Settings") %></a></li>
+          <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
+        </ul>
+      </div>
+      <div id="main-navigation">
+        <ul class="wat-cf"></ul>
+      </div>
+    </div>    
+    <div id="wrapper" class="wat-cf">
+      <div class="flash">
+        <% flash.each do |type, message| -%>
+          <div class="message <%= type %>">
+            <p><%= message %></p>
+          </div>
+        <% end -%>
+      </div>
+      <div id="main">
+        <%= yield %>
+        <div id="footer">
+          <div class="block">
+            <p>Copyright &copy; <%= Time.now.year %> One Douze Library.</p>
+          </div>      
+        </div>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
+    </div>    
+  </div>
+</body>
+</html>
